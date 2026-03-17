@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.csproj": {}
+    "D:\\FPT\\FPTSp26\\prn212\\SWD-Project\\SWD\\SWD.csproj": {}
   },
   "projects": {
-    "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.csproj": {
+    "D:\\FPT\\FPTSp26\\prn212\\SWD-Project\\SWD\\SWD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.csproj",
+        "projectUniqueName": "D:\\FPT\\FPTSp26\\prn212\\SWD-Project\\SWD\\SWD.csproj",
         "projectName": "SWD",
-        "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.csproj",
-        "packagesPath": "C:\\Users\\hoany\\.nuget\\packages\\",
-        "outputPath": "M:\\Games\\RepoVS\\SWD\\SWD\\obj\\",
+        "projectPath": "D:\\FPT\\FPTSp26\\prn212\\SWD-Project\\SWD\\SWD.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\FPTSp26\\prn212\\SWD-Project\\SWD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "M:\\Games\\Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hoany\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +49,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.23, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
