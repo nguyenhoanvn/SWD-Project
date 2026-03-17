@@ -1,3 +1,8 @@
+﻿using Microsoft.EntityFrameworkCore;
+using SWD.Data;
+using SWD.Interfaces;
+using SWD.Services;
+
 namespace SWD
 {
     public class Program
@@ -6,28 +11,36 @@ namespace SWD
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<AppDbContext>(opt =>
+                opt.UseInMemoryDatabase("CambridgeDB"));
+
+            builder.Services.AddScoped<IPaymentGatewayProxy, PaymentGatewayProxy>();
+            builder.Services.AddScoped<INotificationProxy, NotificationProxy>();
+
+            builder.Services.AddScoped<IAcademicService, AcademicService>();
+            builder.Services.AddScoped<IFinancialService, FinancialService>();
+            builder.Services.AddScoped<IAuditLogService, AuditLogService>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
+
+            builder.Services.AddScoped<IEnrollmentCoordinator, EnrollmentCoordinator>();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            SeedData.Initialize(app.Services);
+
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.MapRazorPages();
-
             app.Run();
         }
     }
