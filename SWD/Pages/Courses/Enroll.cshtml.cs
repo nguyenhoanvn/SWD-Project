@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SWD.Data;
-using SWD.Services;
+using SWD.Domain.Models;
 using SWD.Interfaces;
 
 namespace SWD.Pages.Courses
@@ -25,8 +25,8 @@ namespace SWD.Pages.Courses
         [BindProperty(SupportsGet = true)] public string ClassId   { get; set; } = "";
         [BindProperty(SupportsGet = true)] public string StudentId { get; set; } = "";
 
-        public SWD.Models.Class?   SelectedClass   { get; set; }
-        public SWD.Models.Student? CurrentStudent  { get; set; }
+        public Class?   SelectedClass   { get; set; }
+        public Student? CurrentStudent  { get; set; }
         public string? ErrorMessage { get; set; }
 
         public async Task OnGetAsync()

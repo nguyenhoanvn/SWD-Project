@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SWD.Application.Interfaces;
 using SWD.Data;
+using SWD.Infrastructure.Repositories;
 using SWD.Interfaces;
 using SWD.Services;
 
@@ -23,6 +25,12 @@ namespace SWD
             builder.Services.AddScoped<IFinancialService, FinancialService>();
             builder.Services.AddScoped<IAuditLogService, AuditLogService>();
             builder.Services.AddScoped<INotificationService, NotificationService>();
+
+            builder.Services.AddScoped<IClassRepository, ClassRepository>();
+            builder.Services.AddScoped<IRegistrationRepository, RegistrationRepository>();
+            builder.Services.AddScoped<IScheduleRepository, ScheduleRepository>();
+            builder.Services.AddScoped<IScoreRepository, ScoreRepository>();
+            builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
             builder.Services.AddScoped<IEnrollmentCoordinator, EnrollmentCoordinator>();
 

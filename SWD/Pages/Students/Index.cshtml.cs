@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SWD.Data;
-using SWD.Models;
+using SWD.Domain.Models;
 
 namespace SWD.Pages.Students
 {

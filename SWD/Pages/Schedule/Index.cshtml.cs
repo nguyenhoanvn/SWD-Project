@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SWD.Data;
-using SWD.Models;
 using Microsoft.AspNetCore.Mvc;
+using SWD.Domain.Models;
 namespace SWD.Pages.Schedule
 {
     public class IndexModel : PageModel

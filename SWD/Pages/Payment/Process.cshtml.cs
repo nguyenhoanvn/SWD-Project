@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using SWD.Data;
 using SWD.Services;
 using SWD.Interfaces;
+using SWD.Domain.Models;
+using SWD.Application.DTOs;
 
 namespace SWD.Pages.Payment
 {
@@ -29,7 +31,7 @@ namespace SWD.Pages.Payment
 
         [BindProperty] public string SelectedMethod { get; set; } = "VNPay";
 
-        public SWD.Models.Registration? Registration { get; set; }
+        public Registration? Registration { get; set; }
 
         // UC18 Step 1–2: displayPaymentForm
         public async Task OnGetAsync()
@@ -80,7 +82,7 @@ namespace SWD.Pages.Payment
             var reg = await _db.Registrations.FirstOrDefaultAsync(r => r.RegistrationId == RegistrationId);
             if (reg != null)
             {
-                reg.Status = SWD.Models.RegistrationStatus.Cancelled;
+                reg.Status = RegistrationStatus.Cancelled;
                 await _db.SaveChangesAsync();
             }
             return RedirectToPage("/Courses/Index", new { SelectedStudentId = StudentId });
