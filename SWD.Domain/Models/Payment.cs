@@ -13,13 +13,13 @@ namespace SWD.Domain.Models
     public class Payment
     {
         [Key] public string PaymentId { get; set; } = Guid.NewGuid().ToString();
-        [ForeignKey("Registration")] public string RegistrationId { get; set; } = "";
+        [ForeignKey("Student")] public string StudentId { get; set; } = "";
         public decimal Amount { get; set; }
         public DateTime PaymentDate { get; set; } = DateTime.Now;
         public string PaymentMethod { get; set; } = "";
         public PaymentStatus Status { get; set; } = PaymentStatus.Pending;
         public string TransactionReference { get; set; } = "";
 
-        public Registration Registration { get; set; } = null!;
+        public Student Student { get; set; } = null!;
     }
 }

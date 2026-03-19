@@ -12,8 +12,6 @@ namespace SWD.Domain.Models
     {
         [Key] public string CourseId { get; set; } = Guid.NewGuid().ToString();
         [Required] public string CourseName { get; set; } = "";
-        public double ScoreCondition { get; set; } = 0;
-        public decimal Fee { get; set; } = 0;
         public string Description { get; set; } = "";
 
         public ICollection<Class> Classes { get; set; } = new List<Class>();

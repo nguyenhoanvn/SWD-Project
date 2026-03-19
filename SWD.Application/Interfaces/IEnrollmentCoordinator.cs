@@ -4,7 +4,8 @@ namespace SWD.Interfaces
 {
     public interface IEnrollmentCoordinator
     {
-        Task<EnrollmentResult> RequestEnrollment(string studentId, string classId);
-        Task<EnrollmentResult> ProcessTransactionResult(string registrationId, PaymentResult paymentResult);
+        Task<EnrollmentResult> SendEnrollmentRequest(string studentId, string classId);
+        Task<PaymentResult> SendPaymentData(string studentId, string courseId);
+        Task<EnrollmentResult> ProcessTransactionResult(string studentId, PaymentResult paymentResult);
     }
 }

@@ -15,7 +15,8 @@ namespace SWD.Domain.Models
         [ForeignKey("Schedule")] public string ScheduleId { get; set; } = "";
         public string ClassName { get; set; } = "";
         public int Capacity { get; set; } = 30;
-
+        public double ScoreCondition { get; set; } = 0;
+        public decimal Fee { get; set; } = 0;
         public Course Course { get; set; } = null!;
         public Schedule Schedule { get; set; } = null!;
         public ICollection<Registration> Registrations { get; set; } = new List<Registration>();

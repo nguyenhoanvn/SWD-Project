@@ -41,6 +41,8 @@ namespace SWD.Infrastructure.Services
                 return new EnrollmentResult(false, "Invalid Capacity");
             }
 
+            if (classObj != null && classObj.ScoreCondition > (student?.Scores.MaxBy(s => s.ScoreValue) == null ? 0 : student?.Scores.MaxBy(s => s.ScoreValue).ScoreValue));
+
             return new EnrollmentResult(true, "Enroll Completed");
 
         }

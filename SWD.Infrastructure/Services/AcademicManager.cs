@@ -5,10 +5,10 @@ using SWD.Interfaces;
 
 namespace SWD.Services
 {
-    public class AcademicService : IAcademicService
+    public class AcademicManager : IAcademicManager
     {
         private readonly AppDbContext _db;
-        public AcademicService(AppDbContext db) => _db = db;
+        public AcademicManager(AppDbContext db) => _db = db;
 
         // msg 1.3–1.6: kiểm tra điều kiện tiên quyết
         public async Task<bool> ValidatePrerequisite(string studentId, string classId)
@@ -17,7 +17,7 @@ namespace SWD.Services
                                        .FirstOrDefaultAsync(c => c.ClassId == classId);
             if (cls == null) return false;
 
-            double required = cls.Course.ScoreCondition;
+            double required = cls.ScoreCondition;
             if (required <= 0) return true;
 
             var bestScore = await _db.Scores

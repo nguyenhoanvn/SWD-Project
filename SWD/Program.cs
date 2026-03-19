@@ -2,6 +2,7 @@
 using SWD.Application.Interfaces;
 using SWD.Data;
 using SWD.Infrastructure.Repositories;
+using SWD.Infrastructure.Services;
 using SWD.Interfaces;
 using SWD.Services;
 
@@ -21,7 +22,8 @@ namespace SWD
             builder.Services.AddScoped<IPaymentGatewayProxy, PaymentGatewayProxy>();
             builder.Services.AddScoped<INotificationProxy, NotificationProxy>();
 
-            builder.Services.AddScoped<IAcademicService, AcademicService>();
+            builder.Services.AddScoped<IAcademicManager, AcademicManager>();
+            builder.Services.AddScoped<IEnrollmentManager, EnrollmentManager>();
             builder.Services.AddScoped<IFinancialService, FinancialService>();
             builder.Services.AddScoped<IAuditLogService, AuditLogService>();
             builder.Services.AddScoped<INotificationService, NotificationService>();

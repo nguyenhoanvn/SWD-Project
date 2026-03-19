@@ -26,7 +26,7 @@ namespace SWD.Services
             // 2.1 statusUpdate — lưu Payment
             var payment = new Payment
             {
-                RegistrationId       = paymentData.RegistrationId,
+                StudentId       = paymentData.StudentId,
                 Amount               = paymentData.Amount,
                 PaymentDate          = DateTime.Now,
                 PaymentMethod        = paymentData.PaymentMethod,

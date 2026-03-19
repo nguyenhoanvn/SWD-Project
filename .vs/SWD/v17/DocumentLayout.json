@@ -1,7 +1,76 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "M:\\Games\\RepoVS\\SWD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\courses\\enroll.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\courses\\enroll.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|m:\\games\\repovs\\swd\\swd.infrastructure\\services\\enrollmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|solutionrelative:swd.infrastructure\\services\\enrollmentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5886466B-729A-4891-B98E-62B69BD303F2}|SWD.Domain\\SWD.Domain.csproj|m:\\games\\repovs\\swd\\swd.domain\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5886466B-729A-4891-B98E-62B69BD303F2}|SWD.Domain\\SWD.Domain.csproj|solutionrelative:swd.domain\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|m:\\games\\repovs\\swd\\swd.infrastructure\\services\\enrollmentcoordinator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|solutionrelative:swd.infrastructure\\services\\enrollmentcoordinator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|m:\\games\\repovs\\swd\\swd.infrastructure\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|solutionrelative:swd.infrastructure\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\payment\\process.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\payment\\process.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\payment\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\payment\\result.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\payment\\result.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\payment\\result.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\courses\\enroll.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\courses\\enroll.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|m:\\games\\repovs\\swd\\swd.infrastructure\\services\\academicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|solutionrelative:swd.infrastructure\\services\\academicmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|m:\\games\\repovs\\swd\\swd.infrastructure\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{745CCCC6-1879-4735-8274-424D066ECC09}|SWD.Infrastructure\\SWD.Infrastructure.csproj|solutionrelative:swd.infrastructure\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57687FB-EC30-447B-A25F-B64C349196FD}|SWD.Application\\SWD.Application.csproj|m:\\games\\repovs\\swd\\swd.application\\interfaces\\ienrollmentcoordinator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57687FB-EC30-447B-A25F-B64C349196FD}|SWD.Application\\SWD.Application.csproj|solutionrelative:swd.application\\interfaces\\ienrollmentcoordinator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\pages\\payment\\process.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\pages\\payment\\process.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57687FB-EC30-447B-A25F-B64C349196FD}|SWD.Application\\SWD.Application.csproj|m:\\games\\repovs\\swd\\swd.application\\dtos\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57687FB-EC30-447B-A25F-B64C349196FD}|SWD.Application\\SWD.Application.csproj|solutionrelative:swd.application\\dtos\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|m:\\games\\repovs\\swd\\swd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87116A16-C7E7-4D93-B11F-09E6F2312E29}|SWD\\SWD.Web.csproj|solutionrelative:swd\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A57687FB-EC30-447B-A25F-B64C349196FD}|SWD.Application\\SWD.Application.csproj|m:\\games\\repovs\\swd\\swd.application\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57687FB-EC30-447B-A25F-B64C349196FD}|SWD.Application\\SWD.Application.csproj|solutionrelative:swd.application\\interfaces\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 278,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 208,
           "Children": [
             {
               "$type": "Bookmark",
@@ -818,6 +887,227 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Student.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Domain\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "SWD.Domain\\Models\\Student.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Domain\\Models\\Student.cs",
+              "RelativeToolTip": "SWD.Domain\\Models\\Student.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAIA2wBIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:38:06.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnrollmentManager.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\EnrollmentManager.cs",
+              "RelativeDocumentMoniker": "SWD.Infrastructure\\Services\\EnrollmentManager.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\EnrollmentManager.cs",
+              "RelativeToolTip": "SWD.Infrastructure\\Services\\EnrollmentManager.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:37:04.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Result.cshtml",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Result.cshtml",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Payment\\Result.cshtml",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Result.cshtml",
+              "RelativeToolTip": "SWD\\Pages\\Payment\\Result.cshtml",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwBEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-19T07:33:10.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Courses\\Index.cshtml",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Courses\\Index.cshtml",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Courses\\Index.cshtml",
+              "RelativeToolTip": "SWD\\Pages\\Courses\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwEEAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-19T07:32:23.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Process.cshtml.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Process.cshtml.cs",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Payment\\Process.cshtml.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Process.cshtml.cs",
+              "RelativeToolTip": "SWD\\Pages\\Payment\\Process.cshtml.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAQwEkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:11:24.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EnrollmentCoordinator.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\EnrollmentCoordinator.cs",
+              "RelativeDocumentMoniker": "SWD.Infrastructure\\Services\\EnrollmentCoordinator.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\EnrollmentCoordinator.cs",
+              "RelativeToolTip": "SWD.Infrastructure\\Services\\EnrollmentCoordinator.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwDoAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:28:50.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enroll.cshtml",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Courses\\Enroll.cshtml",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Courses\\Enroll.cshtml",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Courses\\Enroll.cshtml",
+              "RelativeToolTip": "SWD\\Pages\\Courses\\Enroll.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAcwEMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-19T06:54:58.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Result.cshtml.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Result.cshtml.cs",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Payment\\Result.cshtml.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Result.cshtml.cs",
+              "RelativeToolTip": "SWD\\Pages\\Payment\\Result.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:32:49.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "SWD.Infrastructure\\Data\\SeedData.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Data\\SeedData.cs",
+              "RelativeToolTip": "SWD.Infrastructure\\Data\\SeedData.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:55:57.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IEnrollmentCoordinator.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\Interfaces\\IEnrollmentCoordinator.cs",
+              "RelativeDocumentMoniker": "SWD.Application\\Interfaces\\IEnrollmentCoordinator.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\Interfaces\\IEnrollmentCoordinator.cs",
+              "RelativeToolTip": "SWD.Application\\Interfaces\\IEnrollmentCoordinator.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAADwvwgAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:43:19.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "SWD.Infrastructure\\Services\\NotificationService.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\NotificationService.cs",
+              "RelativeToolTip": "SWD.Infrastructure\\Services\\NotificationService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA2wBMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:03:46.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AcademicManager.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\AcademicManager.cs",
+              "RelativeDocumentMoniker": "SWD.Infrastructure\\Services\\AcademicManager.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\Services\\AcademicManager.cs",
+              "RelativeToolTip": "SWD.Infrastructure\\Services\\AcademicManager.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowBMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:28:59.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Enroll.cshtml.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Courses\\Enroll.cshtml.cs",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Courses\\Enroll.cshtml.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Courses\\Enroll.cshtml.cs",
+              "RelativeToolTip": "SWD\\Pages\\Courses\\Enroll.cshtml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:55:01.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Process.cshtml",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Process.cshtml",
+              "RelativeDocumentMoniker": "SWD\\Pages\\Payment\\Process.cshtml",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Pages\\Payment\\Process.cshtml",
+              "RelativeToolTip": "SWD\\Pages\\Payment\\Process.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-19T07:10:47.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PaymentRequest.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\DTOs\\PaymentRequest.cs",
+              "RelativeDocumentMoniker": "SWD.Application\\DTOs\\PaymentRequest.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\DTOs\\PaymentRequest.cs",
+              "RelativeToolTip": "SWD.Application\\DTOs\\PaymentRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:19:51.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD\\Program.cs",
+              "RelativeDocumentMoniker": "SWD\\Program.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD\\Program.cs",
+              "RelativeToolTip": "SWD\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwBkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T06:56:43.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\Interfaces\\INotificationService.cs",
+              "RelativeDocumentMoniker": "SWD.Application\\Interfaces\\INotificationService.cs",
+              "ToolTip": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\Interfaces\\INotificationService.cs",
+              "RelativeToolTip": "SWD.Application\\Interfaces\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T07:02:36.104Z",
+              "EditorCaption": ""
             }
           ]
         },
