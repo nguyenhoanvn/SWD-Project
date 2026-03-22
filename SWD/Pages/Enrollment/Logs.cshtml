@@ -1,0 +1,101 @@
+﻿@page
+@model SWD.Web.Pages.Enrollment.LogsModel
+@{
+    ViewData["Title"] = "Transaction Logs";
+}
+
+<div class="page-header">
+    <h2>Transaction Logs &amp; Audit Trail</h2>
+    <p class="subtitle">NFR-D01: Detailed payment process logs for reconciliation and auditing</p>
+</div>
+
+<div class="layer-badge layer-service">⚙️ Service Layer — TransactionLog entity + Payment entity</div>
+
+<div class="two-col" style="margin-top:1.5rem">
+    <div>
+        <div class="card">
+            <h3>Transaction Logs</h3>
+            @if (!Model.Logs.Any())
+            {
+                <p class="muted">No transactions yet.</p>
+            }
+            else
+            {
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Time</th><th>User</th><th>Ref</th><th>Details</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var log in Model.Logs)
+                        {
+                            <tr>
+                                <td><small>@log.Timestamp.ToString("HH:mm:ss")</small></td>
+                                <td>@log.UserId</td>
+                                <td class="mono"><small>@log.TransactionReference</small></td>
+                                <td>
+                                    <span class="@(log.Details.Contains("PAID") ? "text-success" : log.Details.Contains("FAIL") ? "text-error" : "")">
+                                        @log.Details
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+
+    <div>
+        <div class="card">
+            <h3>Payments</h3>
+            @if (!Model.Payments.Any())
+            {
+                <p class="muted">No payment records yet.</p>
+            }
+            else
+            {
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Ref</th><th>Amount</th><th>Method</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in Model.Payments)
+                        {
+                            <tr>
+                                <td class="mono"><small>@p.TransactionReference</small></td>
+                                <td>@p.Amount.ToString("N0") VND</td>
+                                <td>@p.PaymentMethod</td>
+                                <td>
+                                    <span class="badge @(p.Status == 1 ? "badge-ok" : p.Status == -1 ? "badge-error" : "badge-warn")">
+                                        @(p.Status == 1 ? "PAID" : p.Status == -1 ? "FAILED" : "PENDING")
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+            <h3>Notifications Sent</h3>
+            @if (!Model.Notifications.Any())
+            {
+                <p class="muted">No notifications sent.</p>
+            }
+            else
+            {
+                <ul class="notif-list">
+                    @foreach (var n in Model.Notifications)
+                    {
+                        <li>
+                            <span class="notif-date">@n.CreatedDate.ToString("HH:mm:ss")</span>
+                            <strong>→ @n.ReceiverId:</strong> @n.MessageContent
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>
+

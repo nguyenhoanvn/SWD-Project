@@ -1,0 +1,118 @@
+﻿@page
+@model SWD.Web.Pages.Enrollment.SelectClassModel
+@{
+    ViewData["Title"] = "Select Class — UC02";
+}
+
+<div class="page-header">
+    <h2>UC02 — Enroll in Course</h2>
+    <p class="subtitle">Phase 1: Select a class and validate enrollment conditions</p>
+</div>
+
+<div class="layer-badge layer-user">👤 User Layer — StudentInterface.selectClass(classId)</div>
+
+@if (!string.IsNullOrEmpty(Model.ValidationMessage))
+{
+    <div class="alert @(Model.ValidationSuccess ? "alert-success" : "alert-error")">
+        <strong>@(Model.ValidationSuccess ? "✅ Validated" : "❌ Rejected")</strong>
+        @Model.ValidationMessage
+    </div>
+}
+
+<div class="two-col">
+    <div>
+        <div class="card">
+            <h3>Student</h3>
+            <div class="info-row"><label>Name:</label><span>@Model.Student?.StudentName</span></div>
+            <div class="info-row"><label>ID:</label><span>@Model.StudentId</span></div>
+            <div class="info-row"><label>Email:</label><span>@Model.Student?.Email</span></div>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+            <h3>Current Schedule</h3>
+            @if (Model.CurrentRegistrations.Any())
+            {
+                <table class="data-table">
+                    <thead><tr><th>Class</th><th>Day</th><th>Time</th></tr></thead>
+                    <tbody>
+                        @foreach (var r in Model.CurrentRegistrations)
+                        {
+                            <tr>
+                                <td>@r.ClassName</td>
+                                <td>@r.DayName</td>
+                                <td>@r.TimeRange</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p class="muted">No current enrollments.</p>
+            }
+        </div>
+    </div>
+
+    <div>
+        <div class="card">
+            <h3>Available Classes</h3>
+            <form method="post">
+                <input type="hidden" name="studentId" value="@Model.StudentId" />
+                <table class="data-table selectable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Class</th>
+                            <th>Min Score</th>
+                            <th>Seats</th>
+                            <th>Day / Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in Model.ClassList)
+                        {
+                            <tr>
+                                <td><input type="radio" name="classId" value="@c.ClassId" required /></td>
+                                <td><strong>@c.ClassName</strong><br /><small class="muted">@c.ClassId</small></td>
+                                <td>@c.ConditionScore</td>
+                                <td>
+                                    <span class="@(c.SeatsLeft == 0 ? "badge badge-error" : "badge badge-ok")">
+                                        @c.SeatsLeft / @c.Capacity
+                                    </span>
+                                </td>
+                                <td>@c.DayName<br /><small>@c.TimeRange</small></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap">
+                    <button type="submit" name="action" value="validate" class="btn btn-primary">
+                        Validate Enrollment →
+                    </button>
+                    <a href="/" class="btn btn-ghost">← Change Student</a>
+                </div>
+            </form>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.YourScore))
+        {
+            <div class="card" style="margin-top:1rem">
+                <h3>Placement Score</h3>
+                <p>Your score for selected class: <strong>@Model.YourScore</strong></p>
+            </div>
+        }
+    </div>
+</div>
+
+@if (Model.ValidationSuccess)
+{
+    <div class="card" style="margin-top:1.5rem;border-color:var(--success)">
+        <h3>✅ Proceed to Payment</h3>
+        <p>Enrollment conditions satisfied. Click below to enter payment details (UC18).</p>
+        <a href="/Enrollment/Payment?studentId=@Model.StudentId&classId=@Model.ValidatedClassId"
+               class="btn btn-success">
+            Proceed to Payment →
+        </a>
+    </div>
+}
+

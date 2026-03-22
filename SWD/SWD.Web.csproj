@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SWD.Application\SWD.Application.csproj" />
-    <ProjectReference Include="..\SWD.Infrastructure\SWD.Infrastructure.csproj" />
+    <ProjectReference Include="..\SWD.Coordinator\SWD.Coordinator.csproj" />
+    <ProjectReference Include="..\SWD.Monitor\SWD.Monitor.csproj" />
   </ItemGroup>
 
 </Project>

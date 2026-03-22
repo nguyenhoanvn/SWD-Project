@@ -1,0 +1,97 @@
+﻿@page
+@model SWD.Web.Pages.Enrollment.HistoryModel
+@{
+    ViewData["Title"] = "Enrollment History";
+}
+
+<div class="page-header">
+    <h2>My Enrollments</h2>
+    <p class="subtitle">Registered classes and payment status</p>
+</div>
+
+<div class="layer-badge layer-user">👤 User Layer — StudentInterface.displayEnrollmentResult()</div>
+
+<div style="margin-bottom:1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+    <form method="get" style="display:flex;gap:.5rem;align-items:center">
+        <label>Student:</label>
+        <select name="studentId" class="form-select" onchange="this.form.submit()">
+            @foreach (var s in Model.AllStudents)
+            {
+                <option value="@s.StudentId" selected="@(s.StudentId == Model.StudentId)">
+                    @s.StudentName
+                </option>
+            }
+        </select>
+    </form>
+    <a href="/Enrollment/SelectClass?studentId=@Model.StudentId" class="btn btn-primary">+ Enroll in New Class</a>
+</div>
+
+@if (!Model.Enrollments.Any())
+{
+    <div class="card">
+        <p class="muted">No enrollments found for this student.</p>
+    </div>
+}
+else
+{
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Registration ID</th>
+                <th>Class</th>
+                <th>Schedule</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Payment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var e in Model.Enrollments)
+            {
+                <tr>
+                    <td class="mono">@e.RegistrationId</td>
+                    <td><strong>@e.ClassName</strong><br /><small class="muted">@e.ClassId</small></td>
+                    <td>@e.ScheduleInfo</td>
+                    <td>@e.RegistrationDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <span class="badge @(e.Status == 1 ? "badge-ok" : "badge-error")">
+                            @(e.Status == 1 ? "ACTIVE" : "INACTIVE")
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge @(e.PaymentStatus == 1 ? "badge-ok" : e.PaymentStatus == -1 ? "badge-error" : "badge-warn")">
+                            @(e.PaymentStatus == 1 ? "PAID" : e.PaymentStatus == -1 ? "FAILED" : "PENDING")
+                        </span>
+                        @if (!string.IsNullOrEmpty(e.TransactionRef))
+                        {
+                            <br />
+                    
+                            <small class="mono muted">@e.TransactionRef</small>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="card" style="margin-top:1.5rem">
+    <h3>📬 Notifications</h3>
+    @if (!Model.Notifications.Any())
+    {
+        <p class="muted">No notifications.</p>
+    }
+    else
+    {
+        <ul class="notif-list">
+            @foreach (var n in Model.Notifications)
+            {
+                <li>
+                    <span class="notif-date">@n.CreatedDate.ToString("dd/MM HH:mm")</span>
+                    @n.MessageContent
+                </li>
+            }
+        </ul>
+    }
+</div>
+

@@ -1,10 +1,28 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="hero">
+    <h1>Course Enrollment &amp; Class Management</h1>
+    <p>Demonstration of UC02 (Enroll in Course) and UC18 (Process Online Payment)</p>
+</div>
+
+<div class="card-grid">
+    <div class="card">
+        <div class="card-icon">🧑‍🎓</div>
+        <h3>Select Student</h3>
+        <p>Choose a demo student to begin enrollment.</p>
+        <form method="post">
+            <label>Student</label>
+            <select name="studentId" class="form-select">
+                @foreach (var s in Model.Students)
+                {
+                    <option value="@s.StudentId">@s.StudentName (@s.StudentId)</option>
+                }
+            </select>
+            <button type="submit" class="btn btn-primary" style="margin-top:1rem">Start as this Student →</button>
+        </form>
+    </div>
 </div>

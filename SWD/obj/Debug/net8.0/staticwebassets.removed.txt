@@ -1,0 +1,2 @@
+M:\SWD-Project\SWD\wwwroot\favicon.ico
+M:\SWD-Project\SWD\wwwroot\js\site.js

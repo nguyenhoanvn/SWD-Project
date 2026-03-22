@@ -1,0 +1,130 @@
+﻿@page
+@model SWD.Web.Pages.Enrollment.PaymentModel
+@{
+    ViewData["Title"] = "Payment — UC18";
+}
+
+<div class="page-header">
+    <h2>UC18 — Process Online Payment</h2>
+    <p class="subtitle">Phase 2: Enter payment details and complete enrollment</p>
+</div>
+
+<div class="layer-badge layer-user">👤 User Layer — StudentInterface.inputPaymentInformation()</div>
+
+@if (!string.IsNullOrEmpty(Model.ResultMessage))
+{
+    <div class="alert @(Model.PaymentSuccess ? "alert-success" : "alert-error")">
+        <strong>@(Model.PaymentSuccess ? "✅ Success" : "❌ Failed")</strong>
+        @Model.ResultMessage
+    </div>
+
+    @if (Model.PaymentSuccess)
+    {
+        <div class="card" style="border-color:var(--success);margin-bottom:1.5rem">
+            <h3>🎉 Enrollment Confirmed</h3>
+            <div class="info-row"><label>Transaction Ref:</label><span class="mono">@Model.TransactionReference</span></div>
+            <div class="info-row"><label>Student ID:</label><span>@Model.StudentId</span></div>
+            <div class="info-row"><label>Class ID:</label><span>@Model.ClassId</span></div>
+            <div style="margin-top:1rem;display:flex;gap:1rem">
+                <a href="/Enrollment/History?studentId=@Model.StudentId" class="btn btn-primary">View My Enrollments →</a>
+                <a href="/Enrollment/Logs" class="btn btn-ghost">Transaction Logs</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div style="margin-bottom:1.5rem">
+            <a href="/Enrollment/SelectClass?studentId=@Model.StudentId" class="btn btn-ghost">← Back to Class Selection</a>
+        </div>
+    }
+}
+
+@if (!Model.PaymentSuccess)
+{
+    <div class="two-col">
+        <div>
+            <div class="card">
+                <h3>Enrollment Summary</h3>
+                <div class="info-row"><label>Student ID:</label><span>@Model.StudentId</span></div>
+                <div class="info-row"><label>Class:</label><span>@Model.ClassName</span></div>
+                <div class="info-row"><label>Class ID:</label><span>@Model.ClassId</span></div>
+                <div class="info-row"><label>Schedule:</label><span>@Model.ScheduleInfo</span></div>
+                <div class="info-row"><label>Tuition Fee:</label><span class="price">5,000,000 VND</span></div>
+            </div>
+        </div>
+
+        <div>
+            <div class="card">
+                <h3>Payment Details</h3>
+                <form method="post">
+                    <input type="hidden" name="studentId" value="@Model.StudentId" />
+                    <input type="hidden" name="classId" value="@Model.ClassId" />
+
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select name="paymentMethod" class="form-select">
+                            <option value="VISA">VISA Card</option>
+                            <option value="MASTERCARD">MasterCard</option>
+                            <option value="BANKING">Internet Banking</option>
+                            <option value="MOMO">MoMo Wallet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Card / Account Number</label>
+                        <input type="text" class="form-input" placeholder="•••• •••• •••• ••••" maxlength="19" value="4242 4242 4242 4242" />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry</label>
+                            <input type="text" class="form-input" placeholder="MM/YY" value="12/27" />
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" class="form-input" placeholder="•••" value="123" />
+                        </div>
+                    </div>
+
+                    <div class="gateway-sim">
+                        <p>🔧 <strong>Gateway Simulation Mode</strong></p>
+                        <p>Choose which scenario the external payment gateway will return:</p>
+                        <div class="sim-buttons">
+                            <button type="submit" name="simulateSuccess" value="true" class="btn btn-success">
+                                ✅ Simulate Payment Success
+                            </button>
+                            <button type="submit" name="simulateSuccess" value="false" class="btn btn-danger">
+                                ❌ Simulate Payment Failure
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="flow-diagram card" style="margin-top:1.5rem">
+        <h3>UC18 Message Flow</h3>
+        <div class="flow-steps">
+            <div class="flow-step"><span class="flow-num">2.1</span>Send Payment Data → EnrollmentCoordinator</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.2</span>Initiate Payment → FinancialService</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.3</span>Record Payment Request → Payment entity (PENDING)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.5</span>Gateway Request → PaymentGatewayProxy → External Gateway</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.6/2.6A</span>Transaction Success / Failure Status ← Gateway</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.7/2.6A.1</span>Update Transaction Status (Paid / Fail)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.8/2.6A.4</span>Log Activity → TransactionLog</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.9</span>Create Registration record (success only)</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.11–2.16</span>Trigger Notification → NotificationProxy → System</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-step"><span class="flow-num">2.17</span>Display Enrollment Result → StudentInterface</div>
+        </div>
+    </div>
+}

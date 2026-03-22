@@ -2,11 +2,11 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Microsoft.EntityFrameworkCore/8.0.25": {
+      "Microsoft.EntityFrameworkCore/8.0.23": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.25",
-          "Microsoft.EntityFrameworkCore.Analyzers": "8.0.25",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.23",
+          "Microsoft.EntityFrameworkCore.Analyzers": "8.0.23",
           "Microsoft.Extensions.Caching.Memory": "8.0.1",
           "Microsoft.Extensions.Logging": "8.0.1"
         },
@@ -24,7 +24,7 @@
           "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/8.0.25": {
+      "Microsoft.EntityFrameworkCore.Abstractions/8.0.23": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -37,7 +37,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/8.0.25": {
+      "Microsoft.EntityFrameworkCore.Analyzers/8.0.23": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -215,53 +215,50 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "SWD.Application/1.0.0": {
+      "SWD.Coordinator/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "SWD.Domain": "1.0.0"
+          "SWD.Monitor": "1.0.0",
+          "SWD.Service": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/SWD.Application.dll": {}
+          "bin/placeholder/SWD.Coordinator.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SWD.Application.dll": {}
+          "bin/placeholder/SWD.Coordinator.dll": {}
         }
       },
-      "SWD.Domain/1.0.0": {
+      "SWD.Monitor/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.25"
+          "SWD.Service": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/SWD.Domain.dll": {}
+          "bin/placeholder/SWD.Monitor.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SWD.Domain.dll": {}
+          "bin/placeholder/SWD.Monitor.dll": {}
         }
       },
-      "SWD.Infrastructure/1.0.0": {
+      "SWD.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "SWD.Application": "1.0.0",
-          "SWD.Domain": "1.0.0"
-        },
         "compile": {
-          "bin/placeholder/SWD.Infrastructure.dll": {}
+          "bin/placeholder/SWD.Service.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SWD.Infrastructure.dll": {}
+          "bin/placeholder/SWD.Service.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Microsoft.EntityFrameworkCore/8.0.25": {
-      "sha512": "1seNis+YnJwiQpwzBCQVWTlyfnlfwotQUkCC0MINwS6yt5Gco4XZ/xOz1fB5uwAWjO/TrDzL/sIMk2hXPxeHbg==",
+    "Microsoft.EntityFrameworkCore/8.0.23": {
+      "sha512": "zFFiP1bv9ym5TESwaajug8lN5rCB4KWk7d/5US+X3xVdZ5qeIbpszOFNtx6cijM6fyuacUCDKIfWsJ0WN9JFfQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/8.0.25",
+      "path": "microsoft.entityframeworkcore/8.0.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -270,14 +267,14 @@
         "buildTransitive/net8.0/Microsoft.EntityFrameworkCore.props",
         "lib/net8.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.8.0.25.nupkg.sha512",
+        "microsoft.entityframeworkcore.8.0.23.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/8.0.25": {
-      "sha512": "YGJD4/P34LsQetSH5R0J58nAWSFGn7BE11zThfCkILTW8wy+9/kwqM2P0ciHhuzlPzwApputDfQ5u35+fH6BGQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/8.0.23": {
+      "sha512": "R4Zw5NwUjVWdx0+3ycJnCmAPIQ2s1VLPeh3gF6ZOJ4MuBiiQWLRN3XlSv4JJ3rAVjrcIa0N0APIkHELHf95JIA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/8.0.25",
+      "path": "microsoft.entityframeworkcore.abstractions/8.0.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -285,14 +282,14 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.8.0.25.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.8.0.23.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/8.0.25": {
-      "sha512": "jHtsaYPDBoNsIA085ZbqrZGidG+rnoZGJ/0JTL6QHR0XV4JLnLoJgPao7zVsqhEVJUnS7JOfVClr0UThAxoiuQ==",
+    "Microsoft.EntityFrameworkCore.Analyzers/8.0.23": {
+      "sha512": "OJffn34WQkZRtyleqlCrf5BstqYrgo0ZvVgs4Kx4/pbtWdk5VoTrE7vf5ni+a5Aq1/5SGOt4/TY8RuGfxYjADw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/8.0.25",
+      "path": "microsoft.entityframeworkcore.analyzers/8.0.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -300,7 +297,7 @@
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "docs/PACKAGE.md",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.8.0.25.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.8.0.23.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
@@ -625,47 +622,47 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "SWD.Application/1.0.0": {
+    "SWD.Coordinator/1.0.0": {
       "type": "project",
-      "path": "../SWD.Application/SWD.Application.csproj",
-      "msbuildProject": "../SWD.Application/SWD.Application.csproj"
+      "path": "../SWD.Coordinator/SWD.Coordinator.csproj",
+      "msbuildProject": "../SWD.Coordinator/SWD.Coordinator.csproj"
     },
-    "SWD.Domain/1.0.0": {
+    "SWD.Monitor/1.0.0": {
       "type": "project",
-      "path": "../SWD.Domain/SWD.Domain.csproj",
-      "msbuildProject": "../SWD.Domain/SWD.Domain.csproj"
+      "path": "../SWD.Monitor/SWD.Monitor.csproj",
+      "msbuildProject": "../SWD.Monitor/SWD.Monitor.csproj"
     },
-    "SWD.Infrastructure/1.0.0": {
+    "SWD.Service/1.0.0": {
       "type": "project",
-      "path": "../SWD.Infrastructure/SWD.Infrastructure.csproj",
-      "msbuildProject": "../SWD.Infrastructure/SWD.Infrastructure.csproj"
+      "path": "../SWD.Service/SWD.Service.csproj",
+      "msbuildProject": "../SWD.Service/SWD.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.EntityFrameworkCore.InMemory >= 8.0.23",
-      "SWD.Application >= 1.0.0",
-      "SWD.Infrastructure >= 1.0.0"
+      "SWD.Coordinator >= 1.0.0",
+      "SWD.Monitor >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hoany\\.nuget\\packages\\": {},
-    "M:\\Games\\Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "M:\\Games\\VisualStudio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.Web.csproj",
+      "projectUniqueName": "M:\\SWD-Project\\SWD\\SWD.Web.csproj",
       "projectName": "SWD.Web",
-      "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.Web.csproj",
-      "packagesPath": "C:\\Users\\hoany\\.nuget\\packages\\",
-      "outputPath": "M:\\Games\\RepoVS\\SWD\\SWD\\obj\\",
+      "projectPath": "M:\\SWD-Project\\SWD\\SWD.Web.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "M:\\SWD-Project\\SWD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "M:\\Games\\Visual Studio\\Shared\\NuGetPackages"
+        "M:\\Games\\VisualStudio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hoany\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -681,11 +678,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "M:\\Games\\RepoVS\\SWD\\SWD.Application\\SWD.Application.csproj": {
-              "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\SWD.Application.csproj"
+            "M:\\SWD-Project\\SWD.Coordinator\\SWD.Coordinator.csproj": {
+              "projectPath": "M:\\SWD-Project\\SWD.Coordinator\\SWD.Coordinator.csproj"
             },
-            "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\SWD.Infrastructure.csproj": {
-              "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\SWD.Infrastructure.csproj"
+            "M:\\SWD-Project\\SWD.Monitor\\SWD.Monitor.csproj": {
+              "projectPath": "M:\\SWD-Project\\SWD.Monitor\\SWD.Monitor.csproj"
             }
           }
         }
@@ -700,7 +697,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -730,7 +727,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
