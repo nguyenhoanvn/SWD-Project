@@ -14,6 +14,7 @@ namespace SWD.Domain.Models
         [Required] public string Email { get; set; } = "";
         public string PasswordHash { get; set; } = "";
 
+        public ICollection<Payment> Payments { get; set; } = new List<Payment>();
         public ICollection<Registration> Registrations { get; set; } = new List<Registration>();
         public ICollection<Score> Scores { get; set; } = new List<Score>();
     }

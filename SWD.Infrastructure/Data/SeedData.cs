@@ -22,18 +22,18 @@ namespace SWD.Data
             db.Schedules.AddRange(sch1, sch2, sch3, sch4);
 
             // ── Courses ────────────────────────────────────────
-            var c1 = new Course { CourseId = "C01", CourseName = "IELTS Foundation", ScoreCondition = 0, Fee = 3_500_000, Description = "Khóa nền tảng IELTS cho người mới bắt đầu" };
-            var c2 = new Course { CourseId = "C02", CourseName = "IELTS Intermediate", ScoreCondition = 4.5, Fee = 4_500_000, Description = "Yêu cầu IELTS Foundation ≥ 4.5" };
-            var c3 = new Course { CourseId = "C03", CourseName = "IELTS Advanced", ScoreCondition = 6.0, Fee = 5_500_000, Description = "Yêu cầu IELTS Intermediate ≥ 6.0" };
-            var c4 = new Course { CourseId = "C04", CourseName = "Business English", ScoreCondition = 0, Fee = 4_000_000, Description = "Tiếng Anh thương mại cho người đi làm" };
+            var c1 = new Course { CourseId = "C01", CourseName = "IELTS Foundation", Description = "Khóa nền tảng IELTS cho người mới bắt đầu" };
+            var c2 = new Course { CourseId = "C02", CourseName = "IELTS Intermediate", Description = "Yêu cầu IELTS Foundation ≥ 4.5" };
+            var c3 = new Course { CourseId = "C03", CourseName = "IELTS Advanced", Description = "Yêu cầu IELTS Intermediate ≥ 6.0" };
+            var c4 = new Course { CourseId = "C04", CourseName = "Business English", Description = "Tiếng Anh thương mại cho người đi làm" };
             db.Courses.AddRange(c1, c2, c3, c4);
 
             // ── Classes ────────────────────────────────────────
-            var cl1 = new Class { ClassId = "CL01", CourseId = "C01", ScheduleId = "SCH01", ClassName = "Foundation A - Thứ 2", Capacity = 20 };
-            var cl2 = new Class { ClassId = "CL02", CourseId = "C01", ScheduleId = "SCH04", ClassName = "Foundation B - Thứ 7", Capacity = 20 };
-            var cl3 = new Class { ClassId = "CL03", CourseId = "C02", ScheduleId = "SCH02", ClassName = "Intermediate - Thứ 4", Capacity = 15 };
-            var cl4 = new Class { ClassId = "CL04", CourseId = "C03", ScheduleId = "SCH03", ClassName = "Advanced - Thứ 3", Capacity = 10 };
-            var cl5 = new Class { ClassId = "CL05", CourseId = "C04", ScheduleId = "SCH01", ClassName = "Business - Thứ 2", Capacity = 25 };
+            var cl1 = new Class { ClassId = "CL01", CourseId = "C01", ScheduleId = "SCH01", ClassName = "Foundation A - Thứ 2", Capacity = 20, ScoreCondition = 0, Fee = 3_500_000 };
+            var cl2 = new Class { ClassId = "CL02", CourseId = "C01", ScheduleId = "SCH04", ClassName = "Foundation B - Thứ 7", Capacity = 20, ScoreCondition = 4.5, Fee = 4_500_000 };
+            var cl3 = new Class { ClassId = "CL03", CourseId = "C02", ScheduleId = "SCH02", ClassName = "Intermediate - Thứ 4", Capacity = 15, ScoreCondition = 6.0, Fee = 5_500_000 };
+            var cl4 = new Class { ClassId = "CL04", CourseId = "C03", ScheduleId = "SCH03", ClassName = "Advanced - Thứ 3", Capacity = 10, ScoreCondition = 0, Fee = 4_000_000 };
+            var cl5 = new Class { ClassId = "CL05", CourseId = "C04", ScheduleId = "SCH01", ClassName = "Business - Thứ 2", Capacity = 25, ScoreCondition = 0, Fee = 4_000_000 };
             db.Classes.AddRange(cl1, cl2, cl3, cl4, cl5);
 
             // ── Students ───────────────────────────────────────
@@ -65,7 +65,7 @@ namespace SWD.Data
             db.Payments.Add(new Payment
             {
                 PaymentId = "PAY_DEMO",
-                RegistrationId = "REG_DEMO",
+                StudentId = "STU_DEMO",
                 Amount = 4_000_000,
                 PaymentMethod = "VNPay",
                 Status = PaymentStatus.Success,

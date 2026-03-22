@@ -7,14 +7,14 @@ namespace SWD.Pages.Payment
 {
     public class ResultModel : PageModel
     {
-        public string  RegistrationId { get; set; } = "";
+        public string  StudentId { get; set; } = "";
         public bool    Success        { get; set; }
         public string  Message        { get; set; } = "";
         public string  TxnRef         { get; set; } = "";
 
-        public void OnGet(string registrationId, bool success, string message, string txnRef)
+        public void OnGet(string studentId, bool success, string message, string txnRef)
         {
-            RegistrationId = registrationId;
+            StudentId = studentId;
             Success        = success;
             Message        = message;
             TxnRef         = txnRef;

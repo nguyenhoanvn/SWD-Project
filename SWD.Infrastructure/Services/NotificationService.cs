@@ -7,18 +7,18 @@ namespace SWD.Services
     {
         private readonly INotificationProxy _proxy;
         public NotificationService(INotificationProxy proxy) => _proxy = proxy;
-        public async Task<bool> TriggerEnrollmentNotification(Registration reg, bool success)
+        public async Task<bool> TriggerEnrollmentNotification(Student student, bool success)
         {
             string subject = success
-                ? $"[Cambridge English Center] Xác nhận ghi danh lớp {reg.Class?.ClassName}"
-                : $"[Cambridge English Center] Đăng ký lớp {reg.Class?.ClassName} không thành công";
+                ? $"[Cambridge English Center] Xác nhận ghi danh {student.StudentName}"
+                : $"[Cambridge English Center] Đăng ký {student.StudentName} không thành công";
 
             string body = success
-                ? $"Chào {reg.Student?.StudentName},\n\nBạn đã ghi danh thành công vào lớp {reg.Class?.ClassName}.\nMã đăng ký: {reg.RegistrationId}\n\nTrân trọng."
-                : $"Chào {reg.Student?.StudentName},\n\nĐăng ký lớp {reg.Class?.ClassName} không thành công do thanh toán thất bại.\n\nTrân trọng.";
+                ? $"Chào {student.StudentName},\n\nBạn đã ghi danh thành công.\n\nTrân trọng."
+                : $"Chào {student.StudentName},\n\nĐăng ký không thành công do thanh toán thất bại.\n\nTrân trọng.";
 
             // 2.4.1 sendOutboundNotice
-            await _proxy.SendOutboundNotice(reg.Student?.Email ?? "", subject, body);
+            await _proxy.SendOutboundNotice(student.Email ?? "", subject, body);
             return success;
         }
     }

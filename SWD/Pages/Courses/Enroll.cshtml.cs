@@ -38,7 +38,7 @@ namespace SWD.Pages.Courses
         public async Task<IActionResult> OnPostAsync()
         {
             // Gọi EnrollmentCoordinator.requestEnrollment (msg 1.1)
-            var result = await _coordinator.RequestEnrollment(StudentId, ClassId);
+            var result = await _coordinator.SendEnrollmentRequest(StudentId, ClassId);
 
             if (!result.IsSuccess)
             {
@@ -51,7 +51,7 @@ namespace SWD.Pages.Courses
 
             return RedirectToPage("/Payment/Process", new
             {
-                registrationId = result.RegistrationId,
+                classId = ClassId,
                 studentId      = StudentId
             });
         }

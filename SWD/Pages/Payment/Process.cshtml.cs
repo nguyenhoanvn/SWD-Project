@@ -26,50 +26,44 @@ namespace SWD.Pages.Payment
             _db          = db;
         }
 
-        [BindProperty(SupportsGet = true)] public string RegistrationId { get; set; } = "";
         [BindProperty(SupportsGet = true)] public string StudentId      { get; set; } = "";
+        [BindProperty(SupportsGet = true)] public string ClassId { get; set; } = "";
 
         [BindProperty] public string SelectedMethod { get; set; } = "VNPay";
+        [BindProperty] public Student CurrentStudent { get; set; } = null!;
+        [BindProperty] public Class SelectedClass { get; set; } = null!;
 
-        public Registration? Registration { get; set; }
 
         // UC18 Step 1–2: displayPaymentForm
         public async Task OnGetAsync()
         {
-            Registration = await _db.Registrations
-                .Include(r => r.Class).ThenInclude(c => c.Course)
-                .Include(r => r.Student)
-                .FirstOrDefaultAsync(r => r.RegistrationId == RegistrationId);
+            CurrentStudent = _db.Students.FirstOrDefault(s => s.StudentId == StudentId);
+            SelectedClass = _db.Classes.FirstOrDefault(c => c.ClassId == ClassId);
         }
 
         // UC18 Step 3→7: student chọn phương thức → hệ thống xử lý
         public async Task<IActionResult> OnPostAsync()
         {
-            Registration = await _db.Registrations
-                .Include(r => r.Class).ThenInclude(c => c.Course)
-                .Include(r => r.Student)
-                .FirstOrDefaultAsync(r => r.RegistrationId == RegistrationId);
-
-            if (Registration == null)
-                return RedirectToPage("/Index");
 
             // UC18 msg 1.1 requestEnrollment → 1.2 initiatePayment
             var payReq = new PaymentRequest(
-                RegistrationId,
+                StudentId,
+                ClassId,
                 SelectedMethod,
-                Registration.Class.Course.Fee
+                SelectedClass.Fee
+                
             );
 
             // FinancialService.initiatePayment (bao gồm gọi gateway và lưu Payment)
             var payResult = await _financial.InitiatePayment(payReq);
 
             // UC18 msg 2.2: processTransactionResult — coordinator cập nhật Registration + gửi thông báo
-            var enrollResult = await _coordinator.ProcessTransactionResult(RegistrationId, payResult);
+            var enrollResult = await _coordinator.ProcessTransactionResult(StudentId, payResult);
 
             // Chuyển sang trang kết quả (statusResponse)
             return RedirectToPage("/Payment/Result", new
             {
-                registrationId = RegistrationId,
+                studentId = StudentId,
                 success        = enrollResult.IsSuccess,
                 message        = enrollResult.Message,
                 txnRef         = payResult.TransactionRef
@@ -79,12 +73,6 @@ namespace SWD.Pages.Payment
         // UC18 Step 3a: student hủy
         public async Task<IActionResult> OnPostCancelAsync()
         {
-            var reg = await _db.Registrations.FirstOrDefaultAsync(r => r.RegistrationId == RegistrationId);
-            if (reg != null)
-            {
-                reg.Status = RegistrationStatus.Cancelled;
-                await _db.SaveChangesAsync();
-            }
             return RedirectToPage("/Courses/Index", new { SelectedStudentId = StudentId });
         }
     }

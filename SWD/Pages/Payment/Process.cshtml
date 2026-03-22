@@ -14,37 +14,29 @@
 
     <h3 class="mb-4">💳 Thanh toán học phí</h3>
 
-    @if (Model.Registration != null)
+    @if (Model.SelectedClass != null)
     {
         <div class="card shadow-sm mb-4">
-            <div class="card-header bg-success text-white">
-                <small class="opacity-75">Mã đơn hàng</small>
-                <div class="fw-semibold font-monospace">@Model.RegistrationId</div>
-            </div>
             <div class="card-body">
                 <table class="table table-borderless mb-0 small">
                     <tr>
                         <th class="text-muted">Học viên</th>
-                        <td>@Model.Registration.Student?.StudentName</td>
+                        <td>@Model.CurrentStudent?.StudentName</td>
                     </tr>
                     <tr>
                         <th class="text-muted">Khóa học</th>
-                        <td>@Model.Registration.Class?.Course?.CourseName</td>
+                        <td>@Model.SelectedClass?.Course?.CourseName</td>
                     </tr>
                     <tr>
                         <th class="text-muted">Lớp</th>
-                        <td>@Model.Registration.Class?.ClassName</td>
-                    </tr>
-                    <tr>
-                        <th class="text-muted">Ngày đăng ký</th>
-                        <td>@Model.Registration.RegistrationDate.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@Model.SelectedClass?.ClassName</td>
                     </tr>
                 </table>
                 <hr/>
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="fs-5 text-muted">Tổng thanh toán:</span>
                     <span class="fs-3 fw-bold text-success">
-                        @Model.Registration.Class?.Course?.Fee.ToString("N0") ₫
+                        @Model.SelectedClass?.Fee.ToString("N0") ₫
                     </span>
                 </div>
             </div>
@@ -52,7 +44,6 @@
 
 
         <form method="post">
-            <input type="hidden" name="RegistrationId" value="@Model.RegistrationId"/>
             <input type="hidden" name="StudentId"      value="@Model.StudentId"/>
 
             <div class="card shadow-sm mb-4">

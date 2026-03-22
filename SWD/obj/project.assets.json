@@ -649,23 +649,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "M:\\Games\\VisualStudio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\hoany\\.nuget\\packages\\": {},
+    "M:\\Games\\Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "M:\\SWD-Project\\SWD\\SWD.Web.csproj",
+      "projectUniqueName": "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.Web.csproj",
       "projectName": "SWD.Web",
-      "projectPath": "M:\\SWD-Project\\SWD\\SWD.Web.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "M:\\SWD-Project\\SWD\\obj\\",
+      "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD\\SWD.Web.csproj",
+      "packagesPath": "C:\\Users\\hoany\\.nuget\\packages\\",
+      "outputPath": "M:\\Games\\RepoVS\\SWD\\SWD\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "M:\\Games\\VisualStudio\\Shared\\NuGetPackages"
+        "M:\\Games\\Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hoany\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -681,11 +681,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "M:\\SWD-Project\\SWD.Application\\SWD.Application.csproj": {
-              "projectPath": "M:\\SWD-Project\\SWD.Application\\SWD.Application.csproj"
+            "M:\\Games\\RepoVS\\SWD\\SWD.Application\\SWD.Application.csproj": {
+              "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD.Application\\SWD.Application.csproj"
             },
-            "M:\\SWD-Project\\SWD.Infrastructure\\SWD.Infrastructure.csproj": {
-              "projectPath": "M:\\SWD-Project\\SWD.Infrastructure\\SWD.Infrastructure.csproj"
+            "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\SWD.Infrastructure.csproj": {
+              "projectPath": "M:\\Games\\RepoVS\\SWD\\SWD.Infrastructure\\SWD.Infrastructure.csproj"
             }
           }
         }
@@ -700,7 +700,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -730,7 +730,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
